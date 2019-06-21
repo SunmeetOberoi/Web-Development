@@ -1,0 +1,27 @@
+h1{
+  color: blue;
+}
+p{  
+  font-family: calibri;
+  width: 400px;
+}
+.second_div{
+  color: red;
+}
+.third_div{
+  font-weight: bold;
+}
+div{
+  font-family: 'Courier New', Courier, monospace;
+}
+#special_div{
+  font-family: 'Times New Roman', Times, serif;
+}
+button{
+  padding: 15px 20px 15px 20px;
+  background-color: #888;
+  color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+}
