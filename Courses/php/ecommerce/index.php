@@ -1,22 +1,29 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>My Online Shop</title>
-        <link rel="stylesheet" type="text/css" media="all" href="styles/style.css"/>
-    </head>
-    <body>
-        <div class="main_wrapper">
+  <head>
+    <title>My Online Shop</title>
+    <link rel="stylesheet" type="text/css" media="all" href="styles/style.css"/>
+  </head>
+  <body>
+    <div class="main_wrapper">
 
-            <div>This is Header</div>
+      <div class="header_wrapper">
+        <img id="logo" src="images/logo.gif">
+        <img id="banner" src="images/ad_banner.gif">
+      </div>
 
-            <div>This is menubar</div>
+      <div class="menubar">This is menubar</div>
 
-            <div>This is sidebar</div>
+      <div class="content_wrapper">
 
-            <div>This is content area</div>
+        <div id="sidebar">This is sidebar</div>
 
-            <div>This is footer area</div>
+        <div id="content_area">This is content area</div>
 
-        </div>
-    </body>
+      </div>
+
+      <div id="footer">This is footer area</div>
+
+    </div>
+  </body>
 </html>
