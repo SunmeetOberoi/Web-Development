@@ -70,6 +70,41 @@ body {background-color: skyblue;}
     float: left;
 }
 
+
+#sidebar_title{
+    background: white;
+    color: black;
+    font-size: 22px;
+    font-family: arial;
+    padding: 10px;
+    text-align: center;
+}
+
+#cats{
+    text-align: center;
+}
+
+#cats li{
+    list-style: none;
+    margin: 5px;
+}
+
+#cats a{
+    color: white;
+    padding: 8px;
+    margin: 5px;
+    font-size: 20px;
+    text-decoration: none;
+    font-family: "Comic Sans MS";
+}
+
+#cats a:hover{
+    color: red;
+    text-decoration: underline;
+    font-weight: bolder;
+
+}
+
 #footer{
     width: 1000px;
     height: 100px;
