@@ -19,13 +19,13 @@
         </tr>
         <tr>
           <td align="right"><b>Product Title:</b></td>
-          <td><input type="text" name="product_title"/></td>
+          <td><input type="text" name="product_title" size="70" required/></td>
         </tr>
         <tr>
           <td align="right"><b>Product Category:</b></td>
           <td>
-            <select name="product_cat">
-              <option>Select Category</option>
+            <select name="product_cat" required>
+              <option value="">Select Category</option>
               <?php
                 $get_cats = 'SELECT * FROM categories';
                 $run_cats = mysqli_query($con, $get_cats);
@@ -41,8 +41,8 @@
         <tr>
           <td align="right"><b>Product Brand:</b></td>
           <td>
-            <select name="product_brand">
-              <option>Select Brand</option>
+            <select name="product_brand" required>
+              <option value="">Select Brand</option>
               <?php
                 $get_brands = 'SELECT * FROM brands';
                 $run_brands = mysqli_query($con, $get_brands);
@@ -57,11 +57,11 @@
         </tr>
         <tr>
           <td align="right"><b>Product Image:</b></td>
-          <td><input type="file" name="product_image"/></td>
+          <td><input type="file" name="product_image" required/></td>
         </tr>
         <tr>
           <td align="right"><b>Product Price:</b></td>
-          <td><input type="text" name="product_price"/></td>
+          <td><input type="text" name="product_price" required/></td>
         </tr>
         <tr>
           <td align="right"><b>Product Description:</b></td>
@@ -69,7 +69,7 @@
         </tr>
         <tr>
           <td align="right"><b>Product Keyword:</b></td>
-          <td><input type="text" name="product_keyword"/></td>
+          <td><input type="text" name="product_keyword" size="50" required/></td>
         </tr>
         <tr align="center">
           <td colspan="2"><input type="submit" name="insert_post" value="Insert Now" style="padding: 10px; border-radius: 5px;"/></td>
@@ -77,8 +77,18 @@
       </table>
     </form>
 
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
     <script>
       CKEDITOR.replace("product_desc");
+      // validation for ck-editor
+      $("form").submit( function(e) {
+            var messageLength = CKEDITOR.instances['product_desc'].getData().replace(/<[^>]*>/gi, '').length;
+            alert(CKEDITOR.instances['product_desc'].getData().replace(/<[^>]*>/gi, ''));
+            if( !messageLength ) {
+                alert( 'Please enter a description' );
+                e.preventDefault();
+            }
+        });
     </script>
 
   </body>
