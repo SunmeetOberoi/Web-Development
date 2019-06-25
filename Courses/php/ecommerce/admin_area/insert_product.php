@@ -83,7 +83,6 @@
       // validation for ck-editor
       $("form").submit( function(e) {
             var messageLength = CKEDITOR.instances['product_desc'].getData().replace(/<[^>]*>/gi, '').length;
-            alert(CKEDITOR.instances['product_desc'].getData().replace(/<[^>]*>/gi, ''));
             if( !messageLength ) {
                 alert( 'Please enter a description' );
                 e.preventDefault();
@@ -93,3 +92,30 @@
 
   </body>
 </html>
+
+<?php 
+  if(isset($_POST['insert_post'])){
+
+    $product_title = $_POST['product_title'];
+    $product_cat = $_POST['product_cat'];
+    $product_brand = $_POST['product_brand'];
+    $product_price = $_POST['product_price'];
+    $product_desc = $_POST['product_desc'];
+    $product_keyword = $_POST['product_keyword'];
+
+    $product_image = $_FILES['product_image']['name'];
+    $product_image_temp = $_FILES['product_image']['tmp_name'];
+
+    move_uploaded_file($product_image_temp, "product_images/$product_image");
+
+    $insert_product_query = "INSERT INTO products 
+    (product_title, product_cat, product_brand, product_price, product_desc, product_image, product_keyword) VALUES ('$product_title', '$product_cat', '$product_brand', '$product_price', '$product_desc', '$product_image', '$product_keyword');";
+
+    $insert_product = mysqli_query($con, $insert_product_query);
+
+    if($insert_product){
+      echo "<script>alert('Product has been inserted!')</script>";
+    }
+
+  }
+?>
