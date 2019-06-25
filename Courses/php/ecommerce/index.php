@@ -1,7 +1,7 @@
 <?php
   include("functions/functions.php");
 ?>
-<!DOCTYPE>
+<!DOCTYPE html>
 <html>
   <head>
     <title>My Online Shop</title>
@@ -53,7 +53,9 @@
 
       </div>
 
-      <div id="footer">This is footer area</div>
+      <div id="footer">
+        <h2 style="text-align: center; padding-top: 30px;">&copy; 2019 by Sunmeet Oberoi</h2>
+      </div>
 
     </div>
   </body>

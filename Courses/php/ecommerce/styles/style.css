@@ -50,7 +50,6 @@ body {background-color: skyblue;}
 
 .content_wrapper{
     width: 1000px;
-    height: 800px;
     margin: auto;
     background: pink;
 }
@@ -58,14 +57,12 @@ body {background-color: skyblue;}
 
 #content_area{
     width: 800px;
-    height: 800px;
     float: right;
     background: pink;
 }
 
 #sidebar{
     width: 200px;
-    height: 800px;
     background: black;
     float: left;
 }
