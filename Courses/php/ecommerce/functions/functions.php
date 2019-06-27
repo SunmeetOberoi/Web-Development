@@ -45,7 +45,7 @@ function get_products(){
                 <p><b>$ $product_price</b></p>
 
                 <a href='details.php?pro_id=$product_id' style='float: left;'>Details</a>
-                <a href='index.php?pro_id=$product_id'><buttons style='float:right;'>Add to Cart</buttons></a>
+                <a href='index.php?pro_id=$product_id'><button style='float:right;'>Add to Cart</button></a>
             </div>
         
         ";

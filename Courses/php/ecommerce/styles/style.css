@@ -28,6 +28,7 @@ body {background-color: skyblue;}
     width: 1000px;
     height: auto;
     margin: auto;
+    background: pink;
 }
 
 .header_wrapper{
