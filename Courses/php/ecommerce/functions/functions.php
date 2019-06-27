@@ -30,6 +30,7 @@ function get_products(){
     $get_pro_query = 'SELECT * FROM products ORDER BY RAND() LIMIT 0, 6';
     $run_get_pro = mysqli_query($con, $get_pro_query);
     while($row_pro = mysqli_fetch_array($run_get_pro)){
+        $product_id = $row_pro['product_id'];
         $product_title = $row_pro['product_title'];
         $product_cat = $row_pro['product_cat'];
         $product_brand = $row_pro['product_brand'];
@@ -43,8 +44,8 @@ function get_products(){
 
                 <p><b>$ $product_price</b></p>
 
-                <a href='details.php' style='float: left;'>Details</a>
-                <a href='index.php'><buttons style='float:right;'>Add to Cart</buttons></a>
+                <a href='details.php?pro_id=$product_id' style='float: left;'>Details</a>
+                <a href='index.php?pro_id=$product_id'><buttons style='float:right;'>Add to Cart</buttons></a>
             </div>
         
         ";
