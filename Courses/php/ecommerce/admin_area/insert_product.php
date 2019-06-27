@@ -115,6 +115,7 @@
 
     if($insert_product){
       echo "<script>alert('Product has been inserted!')</script>";
+      echo "<script>window.open('insert_product.php', '_self')</script>";
     }
 
   }
