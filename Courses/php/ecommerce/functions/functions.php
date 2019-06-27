@@ -173,4 +173,25 @@ function cart(){
   }
 
 }
+
+function total_items(){
+  global $con;
+
+  $ip=getIp();
+  $get_items = "SELECT *  FROM cart WHERE ip_add='$ip'";
+  $run_items = mysqli_query($con, $get_items);
+  $count_items = mysqli_num_rows($run_items);
+  echo "$count_items";
+}
+
+function total_price(){
+  global $con;
+
+  $ip=getIp();
+
+  $total_query = "SELECT sum(product_price*qty) FROM cart, products WHERE cart.p_id=products.product_id;";
+  $total = mysqli_fetch_array(mysqli_query($con, $total_query))['sum(product_price*qty)'];
+  echo "$ $total ";
+}
+
 ?>
