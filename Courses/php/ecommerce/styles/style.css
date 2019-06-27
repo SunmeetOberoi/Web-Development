@@ -25,16 +25,16 @@ footer, header, hgroup, menu, nav, section {
 body {background-color: skyblue;}
 
 .main_wrapper{
-    width: 1000px;
-    height: auto;
-    margin: auto;
-    background: pink;
+	width: 1000px;
+	height: auto;
+	margin: auto;
+	background: pink;
 }
 
 .header_wrapper{
-    width: 1000px;
-    height: 100px;
-    margin: auto;
+	width: 1000px;
+	height: 100px;
+	margin: auto;
 }
 
 #logo {float: left;}
@@ -42,115 +42,115 @@ body {background-color: skyblue;}
 #banner {float: right;}
 
 .menubar{
-    width: 1000px;
-    height: 50px;
-    background: gray;
-    color: white;
+	width: 1000px;
+	height: 50px;
+	background: gray;
+	color: white;
 }
 
 
 .content_wrapper{
-    width: 1000px;
-    margin: auto;
-    background: pink;
+	width: 1000px;
+	margin: auto;
+	background: pink;
 }
 
 
 #content_area{
-    width: 800px;
-    float: right;
-    background: pink;
+	width: 800px;
+	float: right;
+	background: pink;
 }
 
 #sidebar{
-    width: 200px;
-    background: black;
-    float: left;
+	width: 200px;
+	background: black;
+	float: left;
 }
 
 
 #sidebar_title{
-    background: white;
-    color: black;
-    font-size: 22px;
-    font-family: arial;
-    padding: 10px;
-    text-align: center;
+	background: white;
+	color: black;
+	font-size: 22px;
+	font-family: arial;
+	padding: 10px;
+	text-align: center;
 }
 
 #cats{
-    text-align: center;
+	text-align: center;
 }
 
 #cats li{
-    list-style: none;
-    margin: 5px;
+	list-style: none;
+	margin: 5px;
 }
 
 #cats a{
-    color: white;
-    padding: 8px;
-    margin: 5px;
-    font-size: 20px;
-    text-decoration: none;
-    font-family: "Comic Sans MS";
+	color: white;
+	padding: 8px;
+	margin: 5px;
+	font-size: 20px;
+	text-decoration: none;
+	font-family: "Comic Sans MS";
 }
 
 #cats a:hover{
-    color: red;
-    text-decoration: underline;
-    font-weight: bolder;
+	color: red;
+	text-decoration: underline;
+	font-weight: bolder;
 
 }
 
 #products_box{
-    width: 780px;
-    text-align: center;
-    margin-left: 30px;
-    margin-bottom: 10px;
+	width: 780px;
+	text-align: center;
+	margin-left: 30px;
+	margin-bottom: 10px;
 }
-    #single_product {float: left; margin-left: 20px; padding: 10px;}
+	#single_product {float: left; margin-left: 20px; padding: 10px;}
 
-    #single_product img {border: 2px solid black;}
+	#single_product img {border: 2px solid black;}
 
-    #shopping_cart {width: 800px; height: 50px; background: black; color: white;}
+	#shopping_cart {width: 800px; height: 50px; background: black; color: white;}
 
 #footer{
-    width: 1000px;
-    height: 100px;
-    background: gray;
-    clear: both;
+	width: 1000px;
+	height: 100px;
+	background: gray;
+	clear: both;
 }
 
 #menu{
-    margin: 0;
-    padding: 0;
-    line-height: 40px;
-    float: left;
+	margin: 0;
+	padding: 0;
+	line-height: 40px;
+	float: left;
 }
 
 #menu li{
-    list-style: none;
-    display: inline;
+	list-style: none;
+	display: inline;
 }
 
 #menu a{
-    text-decoration: none;
-    font-size: 18px;
-    color: white;
-    padding: 8px;
-    margin: 5px;
-    font-family: "COMIC SANS MS";
+	text-decoration: none;
+	font-size: 18px;
+	color: white;
+	padding: 8px;
+	margin: 5px;
+	font-family: "COMIC SANS MS";
 }
 
 #menu a:hover{
-    font-weight: bolder;
-    color: orange;
-    text-decoration: underline;
+	font-weight: bolder;
+	color: orange;
+	text-decoration: underline;
 }
 
 #form{
-    float: right;
-    padding-right: 8px;
-    line-height: 50px;
+	float: right;
+	padding-right: 8px;
+	line-height: 50px;
 }
