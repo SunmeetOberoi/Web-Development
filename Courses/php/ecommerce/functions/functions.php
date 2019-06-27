@@ -59,10 +59,10 @@ function get_products(){
         <h3>$product_title</h3>
         <img src='admin_area/product_images/$product_image' width='180' height='180'/>
 
-        <p><b>$ $product_price</b></p>
+        <p><b> Price: $ $product_price</b></p>
 
         <a href='details.php?pro_id=$product_id' style='float: left;'>Details</a>
-        <a href='index.php?pro_id=$product_id'><button style='float:right;'>Add to Cart</button></a>
+        <a href='index.php?add_cart=$product_id'><button style='float:right;'>Add to Cart</button></a>
       </div>
     
     ";  
@@ -94,7 +94,7 @@ function get_all_products(){
         <p><b>$ $product_price</b></p>
 
         <a href='details.php?pro_id=$product_id' style='float: left;'>Details</a>
-        <a href='index.php?pro_id=$product_id'><button style='float:right;'>Add to Cart</button></a>
+        <a href='index.php?add_cart=$product_id'><button style='float:right;'>Add to Cart</button></a>
       </div>
     
     ";  
@@ -127,11 +127,50 @@ function get_results(){
           <p><b>$ $product_price</b></p>
 
           <a href='details.php?pro_id=$product_id' style='float: left;'>Details</a>
-          <a href='index.php?pro_id=$product_id'><button style='float:right;'>Add to Cart</button></a>
+          <a href='index.php?add_cart=$product_id'><button style='float:right;'>Add to Cart</button></a>
         </div>
       
       ";  
     }
   }   
+}
+
+function getIp() {
+  $ip = $_SERVER['REMOTE_ADDR'];
+  if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+    $ip = $_SERVER['HTTP_CLIENT_IP'];
+  } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+    $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+  }
+  return $ip;
+}
+
+
+function cart(){
+  global $con;
+
+  if(isset($_GET['add_cart'])){
+
+    $ip=getIp();
+
+    $product_id = $_GET['add_cart'];
+
+    $check_pro_query = "SELECT * FROM cart WHERE ip_add='$ip' AND p_id='$product_id'";
+
+    $run_check_pro_query = mysqli_query($con, $check_pro_query);
+
+    if(mysqli_num_rows($run_check_pro_query) > 0){
+      echo "";
+    }
+    else{
+      $insert_product = "INSERT INTO cart VALUES ('$product_id', '$ip', '1');";
+
+      $run_insert_pro_query = mysqli_query($con, $insert_product);
+
+      echo "<script>window.open('index.php', '_self')</script>";
+      
+    }
+  }
+
 }
 ?>
