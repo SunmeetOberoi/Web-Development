@@ -2,6 +2,10 @@
 
 $con = mysqli_connect("localhost", "ecommerce_admin", "", "ecommerce");
 
+if(mysqli_connect_errno()){
+  echo "Failed to connect to MySQL: ". mysql_connect_error();
+}
+
 function get_cats(){
 	global $con;
 	$get_cats = 'SELECT * FROM categories';
@@ -41,7 +45,39 @@ function get_products(){
   }
   $run_get_pro = mysqli_query($con, $get_pro_query);
   if(mysqli_num_rows($run_get_pro)==0) {
-    echo "<h3>No Products Found!</h3>";
+    echo "<h3 style='padding:20px';>No Products Found!</h3>";
+  }
+
+  while($row_pro = mysqli_fetch_array($run_get_pro)){
+    $product_id = $row_pro['product_id'];
+    $product_title = $row_pro['product_title'];
+    $product_price = $row_pro['product_price'];
+    $product_image = $row_pro['product_image'];
+
+    echo "
+      <div id='single_product'>
+        <h3>$product_title</h3>
+        <img src='admin_area/product_images/$product_image' width='180' height='180'/>
+
+        <p><b>$ $product_price</b></p>
+
+        <a href='details.php?pro_id=$product_id' style='float: left;'>Details</a>
+        <a href='index.php?pro_id=$product_id'><button style='float:right;'>Add to Cart</button></a>
+      </div>
+    
+    ";  
+	}   
+}
+
+function get_all_products(){
+
+  global $con;
+
+  $get_pro_query = "SELECT * FROM products";
+
+  $run_get_pro = mysqli_query($con, $get_pro_query);
+  if(mysqli_num_rows($run_get_pro)==0) {
+    echo "<h3 style='padding:20px';>No Products Found!</h3>";
   }
 
   while($row_pro = mysqli_fetch_array($run_get_pro)){

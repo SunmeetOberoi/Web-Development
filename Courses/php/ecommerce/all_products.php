@@ -57,7 +57,7 @@
           </div>
           <div id="products_box">
             <?php
-              get_products();
+              get_all_products();
             ?>
           </div>
         </div>
