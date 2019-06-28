@@ -201,6 +201,7 @@ function cart_items(){
   $get_items_query = "SELECT product_price, product_image, qty, product_title, product_price*qty, product_id FROM cart, products WHERE cart.p_id=products.product_id;";
   $run_items = mysqli_query($con, $get_items_query);
   $total=0;
+  $i=0;
   while($row_item=mysqli_fetch_array($run_items)){
     $product_image = $row_item['product_image'];
     $product_price = $row_item['product_price'];
@@ -209,17 +210,25 @@ function cart_items(){
     $product_id = $row_item['product_id'];
     $total += $row_item['product_price*qty'];
 
+    // code to update the quantity of a product in the cart
+    if(isset($_POST['update_cart'])){
+      $quantity =$_POST['qty'][$i];
+      $update_query = "UPDATE cart SET qty=$quantity WHERE p_id='$product_id' AND ip_add='$ip'";
+
+      $run_update_query = mysqli_query($con, $update_query);
+    }
+
     echo "
       <tr align='center'>
         <td><input type='checkbox' name='remove[]' value='$product_id'/></td>
         <td>$product_title<br/>
           <img src='admin_area/product_images/$product_image' width='60' height='60' style='border:1px black solid;'/>
         </td>
-        <td><input type='text' size='4' name='qty' value='$product_quantity'/></td>
+        <td><input type='text' size='4' name='qty[]' value='$product_quantity'/></td>
         <td>$ $product_price</td>
       </tr>
     ";
-
+    $i++;
   }
   echo "<tr align='right'><td colspan='4'>Sub-Total: $ $total</td><tr>";
 }

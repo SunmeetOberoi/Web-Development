@@ -57,7 +57,7 @@
             </span>
           </div>
           <div id="products_box">
-            <form action="" method="POST" enctype='multipart/form-data'>
+            <form action="" method="POST">
 
                 <table align="center" width="700" bgcolor="skyblue">
                     <tr align="center">
@@ -83,11 +83,8 @@
                   $delete_query = "DELETE FROM cart WHERE p_id='$remove_id' AND ip_add='$ip';";
 
                   $run_delete_query = mysqli_query($con, $delete_query);
-
-                  if($run_delete_query){
-                    echo "<script>window.open('cart.php', '_self')</script>";
-                  }
                 }
+                echo "<script>window.open('cart.php', '_self')</script>";
               }
               if(isset($_POST['continue'])){
                 echo "<script>window.open('index.php', '_self')</script>";          
