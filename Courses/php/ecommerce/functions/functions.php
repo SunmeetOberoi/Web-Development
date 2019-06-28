@@ -194,4 +194,33 @@ function total_price(){
   echo "$ $total ";
 }
 
+function cart_items(){
+  global $con;
+
+  $ip=getIp();
+  $get_items_query = "SELECT product_price, product_image, qty, product_title, product_price*qty FROM cart, products WHERE cart.p_id=products.product_id;";
+  $run_items = mysqli_query($con, $get_items_query);
+  $total=0;
+  while($row_item=mysqli_fetch_array($run_items)){
+    $product_image = $row_item['product_image'];
+    $product_price = $row_item['product_price'];
+    $product_quantity = $row_item['qty'];
+    $product_title = $row_item['product_title'];
+    $total += $row_item['product_price*qty'];
+
+    echo "
+      <tr align='center'>
+        <td><input type='checkbox' name='remove[]'/></td>
+        <td>$product_title<br/>
+          <img src='admin_area/product_images/$product_image' width='60' height='60'/>
+        </td>
+        <td><input type='text' size='4' name='qty' value='$product_quantity'/></td>
+        <td>$ $product_price</td>
+      </tr>
+    ";
+
+  }
+  echo "<tr align='right'><td colspan='4'>Sub-Total: $ $total</td><tr>";
+}
+
 ?>
