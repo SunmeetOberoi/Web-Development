@@ -63,26 +63,26 @@
                 $run_get_pro = mysqli_query($con, $get_pro_query);
                 while($row_pro = mysqli_fetch_array($run_get_pro)){
 
-                    $product_title = $row_pro['product_title'];
-                    $product_price = $row_pro['product_price'];
-                    $product_image = $row_pro['product_image'];
-                    $product_desc = $row_pro['product_desc'];
-            
-                    echo "
-                        <div>
-                            <h3>$product_title</h3>
-                            <img src='admin_area/product_images/$product_image' width='400' height='300' style='border: 2px solid black;'/>
-            
-                            <p><b>$ $product_price</b></p>
-                            <p>$product_desc</p>
-                            <br/>
-                            <a href='index.php' style='float: left;'>Go Back</a>
-                            <a href='index.php?add_cart=$product_id'><button style='float:right;' margin='5px'>Add to Cart</button></a>
-                        </div>
-                    
-                    ";
+                  $product_title = $row_pro['product_title'];
+                  $product_price = $row_pro['product_price'];
+                  $product_image = $row_pro['product_image'];
+                  $product_desc = $row_pro['product_desc'];
+          
+                  echo "
+                      <div>
+                          <h3>$product_title</h3>
+                          <img src='admin_area/product_images/$product_image' width='400' height='300' style='border: 2px solid black;'/>
+          
+                          <p><b>$ $product_price</b></p>
+                          <p>$product_desc</p>
+                          <br/>
+                          <a href='index.php' style='float: left;'>Go Back</a>
+                          <a href='index.php?add_cart=$product_id'><button style='float:right;' margin='5px'>Add to Cart</button></a>
+                      </div>
+                  
+                  ";
                 }
-            }
+              }
             ?>
           </div>
         </div>
