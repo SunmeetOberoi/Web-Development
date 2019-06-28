@@ -212,7 +212,7 @@ function cart_items(){
       <tr align='center'>
         <td><input type='checkbox' name='remove[]'/></td>
         <td>$product_title<br/>
-          <img src='admin_area/product_images/$product_image' width='60' height='60'/>
+          <img src='admin_area/product_images/$product_image' width='60' height='60' style='border:1px black solid;'/>
         </td>
         <td><input type='text' size='4' name='qty' value='$product_quantity'/></td>
         <td>$ $product_price</td>

@@ -55,7 +55,7 @@
               Welcome Guest! <b style="color:yellow;">Shopping Cart -</b> Total Items: Total Price: <a href="cart.php" style="color: yellow;">Got to Cart</a>
             </span>
           </div>
-          <div id='products_box'>
+          <div style="width: 780px;text-align: center;">
             <?php
               if(isset($_GET['pro_id'])){
                 $product_id = $_GET['pro_id'];
@@ -69,15 +69,15 @@
                     $product_desc = $row_pro['product_desc'];
             
                     echo "
-                        <div id='single_product'>
+                        <div>
                             <h3>$product_title</h3>
-                            <img src='admin_area/product_images/$product_image' width='400' height='300'/>
+                            <img src='admin_area/product_images/$product_image' width='400' height='300' style='border: 2px solid black;'/>
             
                             <p><b>$ $product_price</b></p>
                             <p>$product_desc</p>
-            
+                            <br/>
                             <a href='index.php' style='float: left;'>Go Back</a>
-                            <a href='index.php?pro_id=$product_id'><button style='float:right;'>Add to Cart</button></a>
+                            <a href='index.php?add_cart=$product_id'><button style='float:right;' margin='5px'>Add to Cart</button></a>
                         </div>
                     
                     ";
