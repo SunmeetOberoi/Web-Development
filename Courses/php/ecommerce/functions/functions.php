@@ -198,7 +198,7 @@ function cart_items(){
   global $con;
 
   $ip=getIp();
-  $get_items_query = "SELECT product_price, product_image, qty, product_title, product_price*qty FROM cart, products WHERE cart.p_id=products.product_id;";
+  $get_items_query = "SELECT product_price, product_image, qty, product_title, product_price*qty, product_id FROM cart, products WHERE cart.p_id=products.product_id;";
   $run_items = mysqli_query($con, $get_items_query);
   $total=0;
   while($row_item=mysqli_fetch_array($run_items)){
@@ -206,11 +206,12 @@ function cart_items(){
     $product_price = $row_item['product_price'];
     $product_quantity = $row_item['qty'];
     $product_title = $row_item['product_title'];
+    $product_id = $row_item['product_id'];
     $total += $row_item['product_price*qty'];
 
     echo "
       <tr align='center'>
-        <td><input type='checkbox' name='remove[]'/></td>
+        <td><input type='checkbox' name='remove[]' value='$product_id'/></td>
         <td>$product_title<br/>
           <img src='admin_area/product_images/$product_image' width='60' height='60' style='border:1px black solid;'/>
         </td>
