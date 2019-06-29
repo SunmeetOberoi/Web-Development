@@ -189,7 +189,7 @@ function total_price(){
 
   $ip=getIp();
 
-  $total_query = "SELECT sum(product_price*qty) FROM cart, products WHERE cart.p_id=products.product_id;";
+  $total_query = "SELECT sum(product_price*qty) FROM cart, products WHERE cart.p_id=products.product_id AND cart.ip_add='$ip';";
   $total = mysqli_fetch_array(mysqli_query($con, $total_query))['sum(product_price*qty)'];
   echo "$ $total ";
 }
@@ -198,7 +198,7 @@ function cart_items(){
   global $con;
 
   $ip=getIp();
-  $get_items_query = "SELECT product_price, product_image, qty, product_title, product_price*qty, product_id FROM cart, products WHERE cart.p_id=products.product_id;";
+  $get_items_query = "SELECT product_price, product_image, qty, product_title, product_price*qty, product_id FROM cart, products WHERE cart.p_id=products.product_id AND cart.ip_add = '$ip';";
   $run_items = mysqli_query($con, $get_items_query);
   $total=0;
   $i=0;
