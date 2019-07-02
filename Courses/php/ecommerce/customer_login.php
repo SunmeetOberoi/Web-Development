@@ -17,7 +17,7 @@
       </tr>
 
       <tr align="center">
-        <td colspan="2"><a href="checkout.php?forgot_pass">Forgot Password?</a></td>
+        <td colspan="2"><a href="checkout.php?forgot_password">Forgot Password?</a></td>
       </tr>      
 
       <tr align="center">
