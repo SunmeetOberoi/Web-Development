@@ -394,16 +394,22 @@
 
     move_uploaded_file($c_image_tmp, "customer/customer_images/$c_image");
 
-     echo $insert_cust_query = "INSERT INTO customers 
+    $insert_cust_query = "INSERT INTO customers 
     (`customer_ip`, `customer_name`, `customer_email`, `customer_pass`, `customer_country`, `customer_city`, `customer_contact`, `customer_address`, `customer_image`)
     VALUES
     ('$ip', '$c_name', '$c_email', '$c_pass', '$c_country', '$c_city', '$c_contact', '$c_address', '$c_image')";
 
     $run_cust_query = mysqli_query($con, $insert_cust_query);
 
-    if($run_cust_query)
-      echo "<script>alert('Registration Successful!')</script>";
-      echo "<script>window.open('customer_register.php', '_self')</script>";
+    $sel_cart = "SELECT * FROM cart WHERE ip_add = '$ip'";
+    $run_cart = mysqli_query($con, $sel_cart);
+    $check_cart = mysqli_num_rows($run_cart);
+    $_SESSION['customer_email'] = $c_email;
+    echo "<script>alert('Account has been created successfully')</script>";
+    if($check_cart == 0)
+      echo "<script>window.open('customer/my_account.php', '_self')</script>";
+    else 
+      echo "<script>window.open('checkout.php', '_self')</script>";
   }
 
 ?>
