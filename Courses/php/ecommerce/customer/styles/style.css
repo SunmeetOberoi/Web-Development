@@ -1,0 +1,166 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+} 
+
+body {background-color: skyblue;}
+
+.main_wrapper{
+	width: 1000px;
+	height: auto;
+	margin: auto;
+	background: pink;
+}
+
+.header_wrapper{
+	width: 1000px;
+	height: 100px;
+	margin: auto;
+}
+
+#logo {float: left;}
+
+#banner {float: right;}
+
+.menubar{
+	width: 1000px;
+	height: 50px;
+	background: gray;
+	color: white;
+}
+
+
+.content_wrapper{
+	width: 1000px;
+	margin: auto;
+	background: pink;
+}
+
+
+#content_area{
+	width: 800px;
+	float: right;
+	background: pink;
+}
+
+#sidebar{
+	width: 200px;
+	background: black;
+	float: right;
+}
+
+
+#sidebar_title{
+	background: white;
+	color: black;
+	font-size: 22px;
+	font-family: arial;
+	padding: 10px;
+	text-align: center;
+}
+
+#my_acc{
+	text-align: center;
+}
+
+#my_acc li{
+	list-style: none;
+	margin: 5px;
+}
+
+#my_acc a{
+	color: orange;
+	padding: 8px;
+	margin: 5px;
+	font-size: 20px;
+	text-decoration: none;
+	font-family: "Comic Sans MS";
+}
+
+#my_acc a:hover{
+	color: white;
+	text-decoration: underline;
+	font-weight: bolder;
+}
+
+#my_acc img{
+	border: 2px solid white;
+	padding: 4px;
+	/* text-align: center; */
+}
+
+#products_box{
+	width: 780px;
+	text-align: center;
+	margin-left: 30px;
+	margin-bottom: 10px;
+}
+	#single_product {float: left; margin-left: 20px; padding: 10px;}
+
+	#single_product img {border: 2px solid black;}
+
+	#shopping_cart {width: 800px; height: 50px; background: black; color: white;}
+
+#footer{
+	width: 1000px;
+	height: 100px;
+	background: gray;
+	clear: both;
+}
+
+td {
+    padding-top: .2em;
+    padding-bottom: .2em;
+}
+
+#menu{
+	margin: 0;
+	padding: 0;
+	line-height: 40px;
+	float: left;
+}
+
+#menu li{
+	list-style: none;
+	display: inline;
+}
+
+#menu a{
+	text-decoration: none;
+	font-size: 18px;
+	color: white;
+	padding: 8px;
+	margin: 5px;
+	font-family: "COMIC SANS MS";
+}
+
+#menu a:hover{
+	font-weight: bolder;
+	color: orange;
+	text-decoration: underline;
+}
+
+#form{
+	float: right;
+	padding-right: 8px;
+	line-height: 50px;
+}
