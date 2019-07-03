@@ -327,7 +327,7 @@
     $c_address = $_POST['c_add'];
 
     if($c_image != ''){
-      move_uploaded_file($c_image_tmp, "customer/customer_images/$c_image");
+      move_uploaded_file($c_image_tmp, "customer_images/$c_image");
 
       $update_query = "UPDATE customers SET customer_name = '$c_name', customer_country = '$c_country', customer_city = '$c_city', customer_contact = '$c_contact', customer_address = '$c_address', customer_image = '$c_image' WHERE customer_email = '$c_email'";
   
