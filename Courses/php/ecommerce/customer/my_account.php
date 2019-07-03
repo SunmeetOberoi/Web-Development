@@ -93,7 +93,7 @@
             include('change_pass.php');
           }
           elseif(isset($_GET['delete_account'])){
-
+			include('delete_customer.php');
           }else{
             echo "<h2 style='text-align: center; padding:20px;'>Welcome: $c_name</h2>    
             <p style='text-align:center' ><b>You can see your order progress <a href='my_account.php?my_orders'>here!</a></b></p>";
