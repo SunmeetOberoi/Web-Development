@@ -188,9 +188,10 @@ function total_price(){
   global $con;
 
   $ip=getIp();
+  $total = 0;
 
   $total_query = "SELECT sum(product_price*qty) FROM cart, products WHERE cart.p_id=products.product_id AND cart.ip_add='$ip';";
-  $total = mysqli_fetch_array(mysqli_query($con, $total_query))['sum(product_price*qty)'];
+  $total += mysqli_fetch_array(mysqli_query($con, $total_query))['sum(product_price*qty)'];
   echo "$ $total ";
 }
 
