@@ -104,7 +104,7 @@
 
                 <tr>
                   <td align="right">Customer Image:</td>
-                  <td><input type="file" name="c_image"/></td>
+                  <td><input type="file" name="c_image" required/></td>
                 </tr>
                   
                 <tr>

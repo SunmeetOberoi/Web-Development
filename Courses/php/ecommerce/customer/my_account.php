@@ -80,8 +80,23 @@
 									echo "<a href='../logout.php' style='color:orange;'>Logout</a>";
 							?>
 
-						</span>
-					</div>
+            </span>
+          </div>
+          <?php
+          if(isset($_GET['edit_account'])){
+            include('edit_account.php');
+          }
+          elseif (isset($_GET['my_orders'])) {
+          }
+          elseif (isset($_GET['change_pass'])) {
+          }
+          elseif(isset($_GET['delete_account'])){
+
+          }else{
+            echo "<h2 style='text-align: center; padding:20px;'>Welcome: $c_name</h2>    
+            <p style='text-align:center' ><b>You can see your order progress <a href='my_account.php?my_orders'>here!</a></b></p>";
+          }
+          ?>
 				</div>
 
 			</div>
