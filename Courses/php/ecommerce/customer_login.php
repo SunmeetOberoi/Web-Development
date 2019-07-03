@@ -1,5 +1,6 @@
 <?php
   include('includes/db.php');
+  session_start();
 ?>
 <div align="center">
   <form method="POST" action="">

@@ -54,7 +54,27 @@
           <?php cart(); ?>
           <div id="shopping_cart">
             <span style="float:right; font-size:18px; padding: 5px; line-height: 40px">
-              Welcome Guest! <b style="color:yellow;">Shopping Cart -</b> Total Items: <?php total_items(); ?> Total Price: <?php total_price(); ?><a href="cart.php" style="color: yellow;">Goto to Cart</a>
+            <?php
+                if(isset($_SESSION['customer_email'])){
+                  $c_email = $_SESSION['customer_email'];
+                  $get_name_query = "SELECT customer_name FROM customers WHERE customer_email='$c_email'";
+                  $run_get_name = mysqli_query($con, $get_name_query);
+                  $c_name = mysqli_fetch_array($run_get_name)['customer_name'];
+                }
+                else
+                  $c_name = "Guest";
+                echo "<b>Welcome </b>$c_name !";
+              ?>
+              
+
+              <b style="color:yellow;">Shopping Cart -</b> Total Items: <?php total_items(); ?> Total Price: <?php total_price(); ?><a href="cart.php" style="color: yellow;">Go to Cart</a>
+
+              <?php
+                if(!isset($_SESSION['customer_email']))
+                  echo "<a href='checkout.php' style='color:orange;'>Login</a>";
+                else
+                  echo "<a href='logout.php' style='color:orange;'>Logout</a>";
+              ?>
             </span>
           </div>
           <div>
