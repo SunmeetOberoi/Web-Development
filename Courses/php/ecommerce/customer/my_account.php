@@ -52,6 +52,7 @@
 						<li><a href="my_account.php?edit_account">Edit Account</a></li>
 						<li><a href="my_account.php?change_pass">Change Password</a></li>
 						<li><a href="my_account.php?delete_account">Delete Account</a></li>
+						<li><a href="../logout.php">Logout</a></li>
 					</ul>
 
 				</div>
@@ -89,6 +90,7 @@
           elseif (isset($_GET['my_orders'])) {
           }
           elseif (isset($_GET['change_pass'])) {
+            include('change_pass.php');
           }
           elseif(isset($_GET['delete_account'])){
 
