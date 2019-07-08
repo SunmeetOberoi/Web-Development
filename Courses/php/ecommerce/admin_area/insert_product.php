@@ -11,7 +11,7 @@
   </head>
   <body bgcolor="skyblue">
 
-    <form action="insert_product.php" method="POST" enctype="multipart/form-data">
+    <form action="" method="POST" enctype="multipart/form-data">
       <table align="center" width="795" border="2" bgcolor="#187eae">
 
         <tr align="center">
