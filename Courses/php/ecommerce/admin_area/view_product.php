@@ -21,6 +21,7 @@
     $i = 0;
     while ($pro_row = mysqli_fetch_array($run_get_products)) {
 
+      $pro_id = $pro_row['product_id'];
       $pro_title = $pro_row['product_title'];
       $pro_image = $pro_row['product_image'];
       $pro_price = $pro_row['product_price'];
@@ -32,8 +33,8 @@
           <td>$pro_title</td>
           <td><img src='product_images/$pro_image' height='60' width='60'></td>
           <td>$price</td>
-          <td><a href='index.php?edit_pro'>Edit</a></td>
-          <td><a href='delete_pro.php'>Delete</a></td>
+          <td><a href='index.php?edit_pro=$pro_id'>Edit</a></td>
+          <td><a href='delete_pro.php?delete_pro=$pro_id'>Delete</a></td>
         </tr>
       ";
 
