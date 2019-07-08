@@ -31,7 +31,8 @@
 
           if(isset($_GET['insert_product']))
             include('insert_product.php');
-            
+          elseif(isset($_GET['view_product']))
+            include('view_product.php');
          ?>
       </div>
     </div>

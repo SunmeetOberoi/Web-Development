@@ -39,14 +39,14 @@ body {background: skyblue;}
 
 #left{
   width: 795px;
-  height: 600px;
+  height: 800px;
   background-image: url(../images/bg-body.gif);
   float: left;
 }
 
 #right{
   width: 200px;
-  height: 600px;
+  height: 800px;
   float: right;
   border-left: 5px groove orange;
   background: #187eae;
