@@ -45,7 +45,7 @@
           <td align="right"><b>Product Category:</b></td>
           <td>
             <select name="product_cat" required>
-              <option value="<?php echo $pro_cat ?>"><?php echo $pro_cat ?></option>
+              <option value="<?php echo $pro_catID ?>"><?php echo $pro_cat ?></option>
               <?php
                 $get_cats = 'SELECT * FROM categories';
                 $run_cats = mysqli_query($con, $get_cats);
@@ -62,7 +62,7 @@
           <td align="right"><b>Product Brand:</b></td>
           <td>
             <select name="product_brand" required>
-              <option value="<?php echo $pro_brand ?>"><?php echo $pro_brand ?></option>
+              <option value="<?php echo $pro_brandID ?>"><?php echo $pro_brand ?></option>
               <?php
                 $get_brands = 'SELECT * FROM brands';
                 $run_brands = mysqli_query($con, $get_brands);
@@ -114,7 +114,7 @@
 </html>
 
 <?php
-  if(isset($_POST['insert_post'])){
+  if(isset($_POST['update_product'])){
 
     $product_title = $_POST['product_title'];
     $product_cat = $_POST['product_cat'];
@@ -123,19 +123,23 @@
     $product_desc = $_POST['product_desc'];
     $product_keyword = $_POST['product_keyword'];
 
-    $product_image = $_FILES['product_image']['name'];
+    echo $product_image = $_FILES['product_image']['name'];
     $product_image_temp = $_FILES['product_image']['tmp_name'];
 
-    move_uploaded_file($product_image_temp, "product_images/$product_image");
+    if($product_image != ''){
+      move_uploaded_file($product_image_temp, "product_images/$product_image");
 
-    $insert_product_query = "INSERT INTO products
-    (product_title, product_cat, product_brand, product_price, product_desc, product_image, product_keyword) VALUES ('$product_title', '$product_cat', '$product_brand', '$product_price', '$product_desc', '$product_image', '$product_keyword');";
+      $update_query = "UPDATE products SET product_title = '$product_title', product_cat = '$product_cat', product_brand = '$product_brand', product_price = '$product_price', product_desc = '$product_desc', product_image = '$product_image', product_keyword = '$product_keyword' WHERE product_id = '$pro_id'";
 
-    $insert_product = mysqli_query($con, $insert_product_query);
+    }else{
+      $update_query = "UPDATE products SET product_title = '$product_title', product_cat = '$product_cat', product_brand = '$product_brand', product_price = '$product_price', product_desc = '$product_desc', product_keyword = '$product_keyword' WHERE product_id = '$pro_id'";
+    }
 
-    if($insert_product){
-      echo "<script>alert('Product has been inserted!')</script>";
-      echo "<script>window.open('index.php?insert_product', '_self')</script>";
+    $update_product = mysqli_query($con, $update_query);
+
+    if($update_product){
+      echo "<script>alert('Product has been Updated!')</script>";
+      echo "<script>window.open('index.php?view_product', '_self')</script>";
     }
 
   }
