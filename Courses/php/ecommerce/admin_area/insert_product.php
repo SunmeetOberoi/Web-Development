@@ -12,7 +12,7 @@
   <body bgcolor="skyblue">
 
     <form action="insert_product.php" method="POST" enctype="multipart/form-data">
-      <table align="center" width="900" border="2" bgcolor="orange">
+      <table align="center" width="795" border="2" bgcolor="#187eae">
 
         <tr align="center">
           <td colspan="2"><h2>Insert New Post Here</h2></td>
@@ -93,7 +93,7 @@
   </body>
 </html>
 
-<?php 
+<?php
   if(isset($_POST['insert_post'])){
 
     $product_title = $_POST['product_title'];
@@ -108,14 +108,14 @@
 
     move_uploaded_file($product_image_temp, "product_images/$product_image");
 
-    $insert_product_query = "INSERT INTO products 
+    $insert_product_query = "INSERT INTO products
     (product_title, product_cat, product_brand, product_price, product_desc, product_image, product_keyword) VALUES ('$product_title', '$product_cat', '$product_brand', '$product_price', '$product_desc', '$product_image', '$product_keyword');";
 
     $insert_product = mysqli_query($con, $insert_product_query);
 
     if($insert_product){
       echo "<script>alert('Product has been inserted!')</script>";
-      echo "<script>window.open('insert_product.php', '_self')</script>";
+      echo "<script>window.open('index.php?insert_product', '_self')</script>";
     }
 
   }

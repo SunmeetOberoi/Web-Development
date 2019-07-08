@@ -51,3 +51,16 @@ body {background: skyblue;}
   border-left: 5px groove orange;
   background: #187eae;
 }
+
+#right a{
+  text-decoration: none;
+  color: white;
+  text-align: left;
+  font-size: 18px;
+  font-family: Palatino;
+  padding: 6px;
+  margin: 6px;
+  display: block;
+}
+
+#right a:hover{text-decoration: underline; font-weight: bolder; color: orange;}
