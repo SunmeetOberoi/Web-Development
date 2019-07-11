@@ -33,8 +33,11 @@
             include('insert_product.php');
           elseif(isset($_GET['view_product']))
             include('view_product.php');
-          elseif(isset($_GET['edit_pro'])) 
+          elseif(isset($_GET['edit_pro']))
             include('edit_pro.php');
+          elseif (isset($_GET['insert_cat'])) {
+            include('insert_cat.php');
+          }
          ?>
       </div>
     </div>
