@@ -39,6 +39,9 @@
             include('insert_cat.php');
           elseif (isset($_GET['view_cats']))
             include('view_cats.php');
+          elseif (isset($_GET['edit_cat'])) {
+            include('edit_cat.php');
+          }
          ?>
       </div>
     </div>
