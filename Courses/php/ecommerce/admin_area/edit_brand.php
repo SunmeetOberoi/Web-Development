@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <?php
   include('includes/db.php');
-
+  session_start();
+  if(!isset($_SESSION['admin_email'])){
+    echo "<script>window.open('admin_login.php', '_self')</script>";
+  }
   if(isset($_GET['edit_brand'])){
     $brand_id = $_GET['edit_brand'];
     $get_brand = "SELECT brand_title FROM brands WHERE brand_id='$brand_id'";

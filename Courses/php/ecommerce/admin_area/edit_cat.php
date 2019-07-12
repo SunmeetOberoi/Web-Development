@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <?php
   include('includes/db.php');
-
+  session_start();
+  if(!isset($_SESSION['admin_email'])){
+    echo "<script>window.open('admin_login.php', '_self')</script>";
+  }
   if(isset($_GET['edit_cat'])){
     $cat_id = $_GET['edit_cat'];
     $get_cat = "SELECT cat_title FROM categories WHERE cat_id='$cat_id'";

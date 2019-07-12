@@ -13,6 +13,8 @@
   </head>
 
   <body>
+    <script type="text/javascript">
+    </script>
     <div class="main_wrapper">
 
       <div id="header"></div>

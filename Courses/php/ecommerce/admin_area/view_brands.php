@@ -1,3 +1,9 @@
+<?php
+  session_start();
+  if(!isset($_SESSION['admin_email'])){
+    echo "<script>window.open('admin_login.php', '_self')</script>";
+  }
+ ?>
 <table width="795" align="center" bgcolor="pink">
 
   <tr align="center">

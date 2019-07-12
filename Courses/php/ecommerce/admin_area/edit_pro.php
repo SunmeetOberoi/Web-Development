@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <?php
   include("includes/db.php");
-
+  session_start();
+  if(!isset($_SESSION['admin_email'])){
+    echo "<script>window.open('admin_login.php', '_self')</script>";
+  }
   if(isset($_GET['edit_pro'])){
     $pro_id = $_GET['edit_pro'];
     $get_pro_query = "SELECT * FROM products WHERE product_id = '$pro_id'";
