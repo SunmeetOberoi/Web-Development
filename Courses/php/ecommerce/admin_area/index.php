@@ -43,6 +43,10 @@
             include('edit_cat.php');
           elseif (isset($_GET['insert_brand']))
             include('insert_brand.php');
+          elseif (isset($_GET['view_brands']))
+            include('view_brands.php');
+          elseif (isset($_GET['edit_brand']))
+            include('edit_brand.php');
          ?>
       </div>
     </div>

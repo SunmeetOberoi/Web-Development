@@ -1,7 +1,7 @@
 <table width="795" align="center" bgcolor="pink">
 
   <tr align="center">
-    <td colspan="2"> <h2>View All Categories Here</h2> </td>
+    <td colspan="4"> <h2>View All Categories Here</h2> </td>
   </tr>
 
   <tr align='center' bgcolor='skyblue'>
