@@ -39,9 +39,10 @@
             include('insert_cat.php');
           elseif (isset($_GET['view_cats']))
             include('view_cats.php');
-          elseif (isset($_GET['edit_cat'])) {
+          elseif (isset($_GET['edit_cat']))
             include('edit_cat.php');
-          }
+          elseif (isset($_GET['insert_brand']))
+            include('insert_brand.php');
          ?>
       </div>
     </div>
