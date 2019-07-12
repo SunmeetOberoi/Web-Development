@@ -1,4 +1,10 @@
 <!DOCTYPE>
+<?php
+  session_start();
+  if(!isset($_SESSION['admin_email'])){
+    echo "<script>window.open('admin_login.php', '_self')</script>";
+  }
+ ?>
 <html>
   <head>
     <title>This is Admin Panel</title>
