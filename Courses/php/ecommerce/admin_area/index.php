@@ -35,9 +35,10 @@
             include('view_product.php');
           elseif(isset($_GET['edit_pro']))
             include('edit_pro.php');
-          elseif (isset($_GET['insert_cat'])) {
+          elseif (isset($_GET['insert_cat']))
             include('insert_cat.php');
-          }
+          elseif (isset($_GET['view_cats']))
+            include('view_cats.php');
          ?>
       </div>
     </div>
