@@ -55,6 +55,8 @@
             include('view_brands.php');
           elseif (isset($_GET['edit_brand']))
             include('edit_brand.php');
+          elseif (isset($_GET['view_customers']))
+            include('view_customers.php');
          ?>
       </div>
     </div>

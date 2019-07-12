@@ -21,11 +21,11 @@
   session_start();
   if(isset($_POST['login'])){
     $a_email = $_POST['email'];
-    echo $a_pass = $_POST['password'];
-    echo $sel_a = "SELECT password FROM admins WHERE email='$a_email'";
+    $a_pass = $_POST['password'];
+    $sel_a = "SELECT password FROM admins WHERE email='$a_email'";
     $run_sel_a = mysqli_query($con, $sel_a);
 
-    echo $hash = mysqli_fetch_array($run_sel_a)['password'];
+    $hash = mysqli_fetch_array($run_sel_a)['password'];
 
     if(!password_verify($a_pass, $hash)){
       echo "<script>alert('Email or Password incorrect')</script>";
