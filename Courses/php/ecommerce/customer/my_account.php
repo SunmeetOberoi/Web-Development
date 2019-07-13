@@ -31,7 +31,7 @@
 						<input type="submit" name="search" value="Search"/>
 					</form>
 				</div>
-			</div>      
+			</div>
 
 			<div class="content_wrapper">
 
@@ -73,7 +73,7 @@
 									$c_name = "Guest";
 								echo "<b>Welcome </b>$c_name !";
 							?>
-								
+
 							<?php
 								if(!isset($_SESSION['customer_email']))
 									echo "<a href='../checkout.php' style='color:orange;'>Login</a>";
@@ -93,9 +93,15 @@
             include('change_pass.php');
           }
           elseif(isset($_GET['delete_account'])){
-			include('delete_customer.php');
-          }else{
-            echo "<h2 style='text-align: center; padding:20px;'>Welcome: $c_name</h2>    
+						include('delete_customer.php');
+          }
+					elseif ($_GET['order_confirmed']) {
+						echo "
+							<h2>Your order was confirmed!</h2>
+						";
+					}
+					else{
+            echo "<h2 style='text-align: center; padding:20px;'>Welcome: $c_name</h2>
             <p style='text-align:center' ><b>You can see your order progress <a href='my_account.php?my_orders'>here!</a></b></p>";
           }
           ?>
