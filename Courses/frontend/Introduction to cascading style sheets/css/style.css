@@ -1,21 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
 body{
-  /* each pair denotes a colour */
-  background: #0f0;
-  /* takes values from 0 to 255 */
-  background: rgb(255, 200, 100);
-  color: #0af;
+  /* if couldn't apply ubuntu will use sans-serif instead */
+  font-family: 'Ubuntu', sans-serif;
+  /* !important overrides everything and applies the style to every child expect specificity */
+  font-weight: 300 !important;
+  margin: 0px;
 }
 
-/* '>' is used to specify direct child */
-body > header > h3 {
-  background: #fff;
-  color: #0f0;
+body h1{
+  font-weight: 300;
+  /* applied to all side */
+  margin: 0px;
+  /* first value is used for top-down second for left-right */
+  margin: 0px 0px;
+  /* values are applied as top, right, bottom, left respectively */
+  margin:0px 0px 0px 0px;
+
+  margin: 20px 30px;
 }
 
-body h3{
-  color: #EEE;
-}
-
-h3 {
-  color: #000;
+/* referring an id */
+#main-header{
+  border-bottom: 2px solid #000;
 }
