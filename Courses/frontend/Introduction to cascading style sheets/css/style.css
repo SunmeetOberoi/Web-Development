@@ -1,0 +1,21 @@
+body{
+  /* each pair denotes a colour */
+  background: #0f0;
+  /* takes values from 0 to 255 */
+  background: rgb(255, 200, 100);
+  color: #0af;
+}
+
+/* '>' is used to specify direct child */
+body > header > h3 {
+  background: #fff;
+  color: #0f0;
+}
+
+body h3{
+  color: #EEE;
+}
+
+h3 {
+  color: #000;
+}
