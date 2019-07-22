@@ -23,3 +23,18 @@ body h1{
 #main-header{
   border-bottom: 2px solid #000;
 }
+
+#top_stories{
+  width: 1000px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.article{
+  max-width: 33%;
+  display: inline-block;
+}
+
+.article img{
+  max-width: 100%;
+}
