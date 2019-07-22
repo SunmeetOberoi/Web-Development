@@ -4,7 +4,7 @@ body{
   font-family: 'Ubuntu', sans-serif;
   /* !important overrides everything and applies the style to every child expect specificity */
   font-weight: 300 !important;
-  margin: 0px;
+  margin-top: 100px;
 }
 
 body h1{
@@ -22,6 +22,10 @@ body h1{
 /* referring an id */
 #main-header{
   border-bottom: 2px solid #000;
+  position: fixed;
+  background: rgba(255, 255, 255, 0.9);
+  width: 100%;
+  top: 0;
 }
 
 #top_stories{
