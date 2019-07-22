@@ -33,8 +33,14 @@ body h1{
 .article{
   max-width: 33%;
   display: inline-block;
+  border: 1px solid #000;
+  padding: 10px;
 }
 
 .article img{
   max-width: 100%;
 }
+/*the following style will be applied to elements having both of these classes together*/
+/*.class1.class2{*/
+/*  background: aliceblue;*/
+/*}*/
