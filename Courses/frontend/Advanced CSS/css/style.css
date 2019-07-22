@@ -51,6 +51,13 @@ article{
   display: inline-block;
   border: 1px solid #000;
   padding: 10px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+  transition: box-shadow .5s, background 3s;
+}
+
+article:hover{
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.7);
+  background: #aaa;
 }
 
 article img{
