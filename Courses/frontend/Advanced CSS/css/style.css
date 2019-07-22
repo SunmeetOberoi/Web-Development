@@ -28,6 +28,18 @@ body h1{
   top: 0;
 }
 
+#main-header::before{
+  content: '';
+  display: block;
+  height: 40px;
+  width: 7px;
+  background: black;
+  bottom: 10px;
+  position: absolute;
+  top: 20px;
+  left: 12px;
+}
+
 #top_stories{
   width: 1000px;
   margin: auto;
