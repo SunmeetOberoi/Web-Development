@@ -57,3 +57,8 @@ h3:focus{
 p:active{
   color: orange;
 }
+
+.article-image{
+  /*for making the pictures circular*/
+  border-radius: 100%;
+}
