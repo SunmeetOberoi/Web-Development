@@ -44,3 +44,16 @@ article img{
 /*.class1.class2{*/
 /*  background: aliceblue;*/
 /*}*/
+
+h3:hover{
+  font-weight: bolder;
+}
+
+/*used on input fields*/
+h3:focus{
+  color: blue;
+}
+
+p:active{
+  color: orange;
+}
