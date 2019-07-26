@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+body{
+  /* if couldn't apply ubuntu will use sans-serif instead */
+  font-family: 'Ubuntu', sans-serif;
+  /* !important overrides everything and applies the style to every child expect specificity */
+  font-weight: 300 !important;
+  margin-top: 100px;
+}
+
+body h1{
+  font-weight: 300;
+  /* applied to all side */
+  margin: 0px;
+  /* first value is used for top-down second for left-right */
+  margin: 0px 0px;
+  /* values are applied as top, right, bottom, left respectively */
+  margin:0px 0px 0px 0px;
+
+  margin: 20px 30px;
+}
+
+/* referring an id */
+#main-header{
+  border-bottom: 2px solid #000;
+  position: fixed;
+  background: rgba(255, 255, 255, 0.9);
+  width: 100vw;
+  top: 0;
+}
+
+#main-header::before{
+  content: '';
+  display: block;
+  height: 40px;
+  width: 7px;
+  background: black;
+  bottom: 10px;
+  position: absolute;
+  top: 20px;
+  left: 12px;
+}
+
+#top_stories{
+  width: 1000px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+article{
+  max-width: 33%;
+  display: inline-block;
+  border: 1px solid #000;
+  padding: 10px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+  transition: box-shadow .5s, background 3s;
+}
+
+article:hover{
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.7);
+  background: #aaa;
+}
+
+article img{
+  max-width: 100%;
+}
+/*the following style will be applied to elements having both of these classes together*/
+/*.class1.class2{*/
+/*  background: aliceblue;*/
+/*}*/
+
+h3:hover{
+  font-weight: bolder;
+}
+
+/*used on input fields*/
+h3:focus{
+  color: blue;
+}
+
+p:active{
+  color: orange;
+}
+
+.article-image{
+  /*for making the pictures circular*/
+  border-radius: 100%;
+}
+
+.my_text{
+    height: 600px;
+    max-height: 200px;
+    overflow: paged-y;
+    overflow-x: hidden;
+    border: 2px solid #000;
+
+}
