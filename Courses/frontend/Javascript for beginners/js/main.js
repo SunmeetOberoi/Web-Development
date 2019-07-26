@@ -1,6 +1,8 @@
-function printDetails(name, age){
-    console.log('Hello,', name, "you are", age);
+var btn = document.getElementById('go-button');
+
+function buttonClicked(){
+    console.log("Button Clicked");
+    btn.removeEventListener('click', buttonClicked);
 }
 
-printDetails('sunmeet', 20);
-printDetails('ram', 21);
+btn.addEventListener('click', buttonClicked);
