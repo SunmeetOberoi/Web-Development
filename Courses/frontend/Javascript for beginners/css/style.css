@@ -94,3 +94,12 @@ p:active{
     border: 2px solid #000;
 
 }
+
+.my_input, .my_textarea{
+  display: block;
+  width: 90%;
+  margin: 10px;
+  padding: 10px 20px;
+  border: 1px solid #aaa;
+  resize: none;
+}
