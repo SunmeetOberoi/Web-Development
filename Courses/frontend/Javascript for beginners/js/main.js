@@ -11,3 +11,18 @@ function buttonClicked(){
 }
 
 btn.addEventListener('click', buttonClicked);
+
+function saySomething(phrase){
+    console.log("You said: " + phrase);
+}
+
+function getPhraseLength(phrase){
+    var l = phrase.length;
+    return l;
+}
+
+var p = "This is a phrase";
+saySomething(p);
+
+var len = getPhraseLength(p);
+console.log(len);
