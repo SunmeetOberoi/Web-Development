@@ -16,13 +16,15 @@ function saySomething(phrase){
     console.log("You said: " + phrase);
 }
 
-function getPhraseLength(phrase){
+function getPhraseLength(phrase, phrase2){
     var l = phrase.length;
+    if(typeof phrase2 !== "undefined")
+        l+=phrase2.length;
     return l;
 }
 
 var p = "This is a phrase";
 saySomething(p);
-
+var p2 = "This is another phrase";
 var len = getPhraseLength(p);
 console.log(len);
