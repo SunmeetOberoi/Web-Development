@@ -32,3 +32,29 @@ saySomething(p);
 var p2 = "This is another phrase";
 var len = getPhraseLength({phrase: p, phrase2: p2});
 console.log(len);
+
+
+
+class Animal{
+
+    constructor(name, height, width){
+        console.log("Animal created named", name)
+        this.name = name;
+        this.height = height;
+        this.width = width;
+    }
+
+    nameLength(){
+        return this.name.length;
+    }
+}
+
+Animal.planet = "Earth";
+
+var dog = new Animal("Fido", 25, 90);
+var fish = new Animal("Goldie", 2, .02);
+
+console.log(dog.nameLength());
+console.log(fish.constructor.planet);
+
+
